@@ -43,7 +43,7 @@ def menu() -> None:
         sleep(2)
         exit(0)
     else:
-        print('Opcao Inválda.')
+        print('Opção Inválda.')
         sleep(2)
         menu()
 
@@ -74,7 +74,7 @@ def efetuar_saque() -> None:
     if len(contas) > 0:
         numero: int = int(input('Informe o número da sua conta: '))
 
-        conta: Conta = buscar_contas_por_numero()
+        conta: Conta = buscar_contas_por_numero(numero)
 
         if conta:
             valor: float = float(input('Informe o valor do saque: '))
@@ -84,15 +84,15 @@ def efetuar_saque() -> None:
             print(f'Não foi encontrado a conta com número: {numero}.')
     else:
         print('Ainda não existem contas cadastradas')
-        sleep(2)
-        menu()
+    sleep(2)
+    menu()
 
 
 def efetuar_deposito() -> None:
     if len(contas) > 0:
         numero: int = int(input('Informe o número da conta: '))
 
-        conta: Conta = buscar_contas_por_numero()
+        conta: Conta = buscar_contas_por_numero(numero)
 
         if conta:
             valor: float = float(input('Informe o valor do depósito: '))
@@ -102,8 +102,8 @@ def efetuar_deposito() -> None:
             print(f'Não foi encontrado uma conta com número: {numero}.')
     else:
         print('Ainda não existem contas cadastradas')
-        sleep(2)
-        menu()
+    sleep(2)
+    menu()
 
 
 def efetuar_transferencia() -> None:
@@ -126,8 +126,8 @@ def efetuar_transferencia() -> None:
             print(f'A sua conta com número: {numero_o}, não foi encontrada.')
     else:
         print('Ainda não existem contas cadastradas')
-        sleep(2)
-        menu()
+    sleep(2)
+    menu()
 
 
 def listar_contas() -> None:
